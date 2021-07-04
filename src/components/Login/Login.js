@@ -29,12 +29,12 @@ const Login = () => {
   const pathVariants = {
     hidden: {
       opacity: 0,
-      fill: "rgba(255, 255, 255, 0)",
+      fill: "rgba(238, 206, 202, 0)",
       pathLength: 0,
     },
     visible: {
       opacity: 1,
-      fill: "rgba(255, 255, 255, 1)",
+      fill: "rgba(238, 206, 202, 1)",
       pathLength: 1,
       transition: {
         default: { duration: 3, ease: "easeInOut" },
