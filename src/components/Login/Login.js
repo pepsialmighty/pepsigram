@@ -6,8 +6,13 @@ import { motion } from "framer-motion";
 import "./Login.scss";
 import { auth } from "../../firebase";
 import Background from "../videos/background.mp4";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Login = () => {
+  const { width } = useWindowDimensions();
+
+  console.log(width);
+
   const svgVariants = {
     hidden: {
       scale: 3,
@@ -17,6 +22,24 @@ const Login = () => {
     visible: {
       scale: 1,
       x: "-52vw",
+      y: "-40vh",
+      transition: {
+        delay: 4,
+        duration: 1,
+        type: "tween",
+      },
+    },
+  };
+
+  const responsiveSVGVariants = {
+    hidden: {
+      scale: 2,
+      x: 0,
+      y: 0,
+    },
+    visible: {
+      scale: 1,
+      x: "-56vw",
       y: "-40vh",
       transition: {
         delay: 4,
@@ -110,7 +133,7 @@ const Login = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="loginSvg"
-          variants={svgVariants}
+          variants={width <= 600 ? responsiveSVGVariants : svgVariants}
           initial="hidden"
           animate="visible"
         >

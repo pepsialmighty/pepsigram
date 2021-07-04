@@ -30,7 +30,7 @@
 }
 
 .loginLogo {
-  width: 200px;
+  width: 12rem;
   position: absolute;
   z-index: 3;
   top: 50%;
@@ -46,16 +46,15 @@
 
 .loginSvg {
   width: 100%;
-  //   position: absolute;
-  //   z-index: 3;
-  //   top: 10px;
-  //   left: 10px;
 }
 
 #login-card {
   position: absolute;
-  top: calc(50vh - 220px);
-  left: calc(50vw - 210px);
+  //   top: calc(50vh - 220px);
+  //   left: calc(50vw - 210px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding-top: 36px;
   padding-bottom: 66px;
   width: 460px;
@@ -96,4 +95,18 @@
   position: relative;
   left: calc(50vw - 33px);
   top: calc(50vh - 22px);
+}
+
+@media screen and (max-width: 600px) {
+  .loginLogo {
+    width: 8rem;
+  }
+
+  #login-card {
+    width: 320px;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
 }
