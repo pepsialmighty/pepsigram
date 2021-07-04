@@ -33,6 +33,15 @@
   font-size: 24px;
   font-weight: 600;
   margin-right: 30px;
+
+  border: 2px solid black;
+  padding: 4px;
+  border-radius: 16px;
+  width: 7rem;
+
+  text-align: center;
+  height: 28px;
+  line-height: 24px;
 }
 
 .ce-chat-title-text {
@@ -46,12 +55,15 @@
 .ce-message-bubble,
 .ce-my-message-bubble {
   background-color: #0c4271 !important;
+  color: white !important;
+}
+
+.ce-their-message-bubble {
+  background-color: #0a81ab !important;
+  color: white !important;
 }
 
 .ce-message-form {
   border: 1px solid #ddd;
   border-radius: 25px;
-}
-
-#msg-textarea {
 }

@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { ChatEngine } from "react-chat-engine";
 import { auth } from "../../firebase";
+import { motion } from "framer-motion";
 
 import { useAuth } from "../../contexts/AuthContext";
 import axios from "axios";
@@ -14,7 +15,16 @@ const Chats = () => {
   const { user } = useAuth();
   const [loading, setLoading] = useState(true);
 
-  console.log(user);
+  const logoutButtonVariants = {
+    hover: {
+      scale: 1.1,
+      transition: {
+        type: "spring",
+        bounce: 0.6,
+        boxShadow: "0px 0px 8px rgb(36, 31, 31)",
+      },
+    },
+  };
 
   const handleLogout = async () => {
     await auth.signOut();
@@ -77,9 +87,14 @@ const Chats = () => {
         <div className="logo-tab">
           <img src={logo} alt="logo" />
         </div>
-        <div onClick={handleLogout} className="logout-tab">
+        <motion.div
+          onClick={handleLogout}
+          className="logout-tab"
+          variants={logoutButtonVariants}
+          whileHover="hover"
+        >
           Logout
-        </div>
+        </motion.div>
       </div>
 
       <div style={{ color: "#0C4271" }}>
