@@ -11,8 +11,6 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 const Login = () => {
   const { width } = useWindowDimensions();
 
-  console.log(width);
-
   const svgVariants = {
     hidden: {
       scale: 3,
